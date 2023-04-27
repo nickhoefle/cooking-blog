@@ -3,8 +3,8 @@ import React, { useContext } from 'react'
 import Link from 'next/link';
 
 const categories = [
-    {name: 'React', slug:'react'},
-    {name: 'Web Development', slug:'web-dev'}
+    {name: 'BBQ', slug:'bbq'},
+    {name: 'Side Dishes', slug:'side-dishes'}
 ]
 
 const Header = () => {

@@ -1,15 +1,11 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { PostCard, Categories, PostWidget } from '../components/'
+import { getPosts } from '../services'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const posts = [
-  {title: 'React Testing', excerpt: 'Learn React Testing'},
-  {title: 'React with Tailwind', excerpt: 'Learn React with Tailwind'},
-]
-
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
       <div className="container mx-auto px-10 mb-8">
@@ -31,4 +27,12 @@ export default function Home() {
       </div>
     </main>
   )
+}
+
+// Fetch data at build time
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: { posts },
+  };
 }
