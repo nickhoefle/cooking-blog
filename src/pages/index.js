@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ posts }) {
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
+    <main className={`flex min-h-screen flex-col items-center justify-between p-0 ${inter.className}`}>
       <div className="container mx-auto px-10 mb-8">
         <Head>
           <title>Nick Hoefle Food and Cooking</title>
