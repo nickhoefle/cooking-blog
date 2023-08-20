@@ -13,7 +13,7 @@ const PostWidget = ({ categories, slug }) => {
         .then((result) => setRelatedPosts(result))
     } else {
       getRecentPosts()
-        .then((result) => setRelatedPosts(result))
+        .then((result) => setRelatedPosts(result.reverse()))
     }
   }, [slug])
 
