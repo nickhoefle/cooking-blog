@@ -17,14 +17,15 @@ const PostWidget = ({ categories, slug }) => {
     }
   }, [slug])
 
-  console.log(relatedPosts)
-
   return (
     <div className='bg-white shadow-lg border-2 border-black border-solid rounded-lg p-8 mb-8'>
       <h3 className='text-black text-xl mb-8 font-semibold border-b border-black pb-4'>
         {slug ? 'Related Posts' : "Recent Posts"}
       </h3>
-      {relatedPosts.map((post) =>(
+      {relatedPosts.length === 0 ? (
+        <i>None yet. Stay tuned!</i>
+      ) : (
+      relatedPosts.reverse().map((post) =>(
         <div key={post.title} className='flex items-center w-full mb-4'>
           <div className='w-16 flex-none'>
             <img
@@ -44,7 +45,8 @@ const PostWidget = ({ categories, slug }) => {
             </Link>
           </div>
         </div>
-      ))}
+      ))
+      )}
     </div>
   )
 }
