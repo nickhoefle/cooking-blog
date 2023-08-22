@@ -6,12 +6,12 @@ const PostCard = ({ post }) => {
   console.log(post);
   
   return (
-    <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
+    <div className='bg-white border-2 border-black border-solid shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
       <div className='relative overflow-hidden shadow-md h-90 mb-6'>
         <img 
           src={post.featuredImage.url}
           alt={post.title}
-          className="object-top relative h-full w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+          className="border-2 border-black border-solid object-top relative h-full w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
         />          
       </div>
       <h1 className="text-black transition duration-100 text-center mb-8 cursor-pointer lg:hover:text-pink-600 text-3xl font-semibold">
