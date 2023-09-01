@@ -6,7 +6,7 @@ console.log(graphqlAPI);
 export const getPosts = async () => {
     const query = gql`
         query MyQuery {
-            postsConnection {
+            postsConnection (first: 20) {
                 edges {
                     node {
                         author {

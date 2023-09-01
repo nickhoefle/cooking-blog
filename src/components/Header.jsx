@@ -11,15 +11,15 @@ const Header = () => {
     }, []);
 
     return (
-        <div className="container mx-auto mb-8">
+        <div className="container mx-auto">
             <div className='w-full inline-block border-blue-400 py-8'>
-                <div className='md:float-left block ml-10'>
+                <div className='block text-center mr-11 md:float-left block ml-11'>
                     <Link href="/">
                         <span className='cursor-pointer font-bold text-4xl text-black'>
                             Nick Hoefle Food and Cooking
                         </span>
                         <br />
-                        <span>
+                        <span className='mt-4 flex flex-wrap justify-center md:mt-0'>
                             {categories.map((category) => (
                                 <Link key={category.slug} href={`/category/${category.slug}`}>
                                     <span className='md:float-left mt-2 align-middle text-black ml-4 font-semibold cursor-pointer'>
